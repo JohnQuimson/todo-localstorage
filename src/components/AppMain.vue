@@ -12,7 +12,6 @@ export default {
 
   methods: {
     addTodo() {
-      console.log('Metodo addTodo chiamato');
       if (this.todoInput.trim() != '') {
         store.todos.push(this.todoInput);
         console.log('Todo aggiunto:', this.todoInput);
@@ -23,6 +22,16 @@ export default {
         localStorage.setItem('todos', JSON.stringify(store.todos));
       } else {
         alert('inserisci un todo valido');
+      }
+    },
+
+    removeTodo(index) {
+      if (index >= 0 && index < store.todos.length) {
+        const deletedTodo = store.todos.splice(index, 1)[0];
+        console.log('Todo rimosso:', deletedTodo);
+        localStorage.setItem('todos', JSON.stringify(store.todos));
+      } else {
+        console.error('Indice del todo non valido');
       }
     },
   },
@@ -49,10 +58,16 @@ export default {
     <button type="submit" class="btn btn-primary">Aggiungi</button>
   </form>
 
-  <h3>I tuoi todo:</h3>
-  <ul>
-    <li v-for="todo in store.todos">{{ todo }}</li>
-  </ul>
+  <h3 v-if="store.todos == ''">Non sono presenti todo</h3>
+  <div v-else>
+    <h3>I tuoi todo:</h3>
+    <ul>
+      <li v-for="(todo, index) in store.todos" :key="index">
+        {{ todo }}
+        <button @click="removeTodo(index)">Rimuovi</button>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
