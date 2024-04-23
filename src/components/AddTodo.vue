@@ -20,6 +20,7 @@ export default {
 
         // Salva il todo nel local storage dopo averlo aggiunto all'array
         localStorage.setItem('todos', JSON.stringify(store.todos));
+        this.$router.push({ name: 'home' });
       } else {
         alert('inserisci un todo valido');
       }
@@ -40,6 +41,9 @@ export default {
       </div>
 
       <button type="submit" class="btn btn-primary">Aggiungi</button>
+      <!-- <router-link type="sumbit" class="btn btn-primary" :to="{ name: 'home' }"
+        >add</router-link
+      > -->
     </form>
   </main>
 </template>

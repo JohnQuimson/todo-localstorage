@@ -38,8 +38,8 @@ export default {
     <h3 v-if="store.todos === ''">Non sono presenti todo</h3>
     <div v-else>
       <h3>I tuoi todo:</h3>
-      <ul>
-        <li v-for="(todo, index) in store.todos">
+      <ul class="p-0">
+        <li class="todo" v-for="(todo, index) in store.todos">
           {{ todo }}
           <button @click="removeTodo(index)">Rimuovi</button>
         </li>
@@ -47,11 +47,29 @@ export default {
     </div>
 
     <router-link
-      class="btn btn-primary text-decoration-none"
+      class="btn-custom text-decoration-none"
       :to="{ name: 'addtodo' }"
       >+</router-link
     >
   </main>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.todo {
+  background-color: #242329;
+  color: white;
+  list-style-type: none;
+}
+
+.btn-custom {
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #752fd0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+</style>
