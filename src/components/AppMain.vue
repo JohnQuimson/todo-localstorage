@@ -68,6 +68,12 @@ export default {
       </li>
     </ul>
   </div>
+
+  <router-link
+    class="btn btn-primary text-decoration-none"
+    :to="{ name: 'addtodo' }"
+    >+</router-link
+  >
 </template>
 
 <style lang="scss" scoped></style>

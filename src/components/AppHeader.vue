@@ -1,18 +1,3 @@
-<template>
-  <div>
-    <h1>Ciao {{ name }}!</h1>
-    <input
-      v-if="editingName"
-      type="text"
-      v-model="inputValue"
-      @input="saveToLocalStorage"
-    />
-    <button @click="toggleEditing">
-      {{ editingName ? 'conferma' : name ? 'cambia nome' : 'inserisci nome' }}
-    </button>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'Header',
@@ -57,6 +42,21 @@ export default {
   },
 };
 </script>
+
+<template>
+  <div>
+    <h1>Ciao {{ name }}!</h1>
+    <input
+      v-if="editingName"
+      type="text"
+      v-model="inputValue"
+      @input="saveToLocalStorage"
+    />
+    <button @click="toggleEditing">
+      {{ editingName ? 'conferma' : name ? 'cambia nome' : 'inserisci nome' }}
+    </button>
+  </div>
+</template>
 
 <style scoped lang="scss">
 /* Stili CSS qui */
