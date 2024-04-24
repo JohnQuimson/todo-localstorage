@@ -35,7 +35,11 @@ export default {
 
 <template>
   <main>
-    <h3 v-if="store.todos === ''">Non sono presenti todo</h3>
+    <div v-if="store.todos == ''" class="no-task">
+      <h3>Non sono presenti Tasks</h3>
+      <p>premi il bottone per aggiungerne</p>
+    </div>
+
     <div v-else>
       <h2>I tuoi To-Do:</h2>
       <ul class="p-0">
@@ -57,6 +61,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.no-task {
+  margin: 50px;
+  h3 {
+    color: #fbfbfc;
+    text-align: center;
+  }
+
+  p {
+    color: #752fd0;
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
 h2 {
   color: #fbfbfc;
   width: 90%;
