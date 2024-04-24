@@ -31,23 +31,63 @@ export default {
 
 <template>
   <main>
-    <h2>crea todo</h2>
+    <h2>Crea Task</h2>
     <form @submit.prevent="addTodo">
-      <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label"
-          >scrivi un to-do</label
-        >
-        <input type="text" class="form-control" v-model="todoInput" />
+      <div class="custom-container">
+        <input
+          type="text"
+          class="form-control"
+          v-model="todoInput"
+          placeholder="scrivi la tua task"
+        />
+        <button type="submit" class="btn-custom my-3">Aggiungi</button>
       </div>
 
-      <button type="submit" class="btn btn-primary">Aggiungi</button>
       <!-- <router-link type="sumbit" class="btn btn-primary" :to="{ name: 'home' }"
         >add</router-link
       > -->
     </form>
+
+    <router-link :to="{ name: 'home' }" class="go-back">
+      <i class="fa-solid fa-xmark"></i
+    ></router-link>
   </main>
 </template>
 
 <style scoped lang="scss">
-/* Stili CSS qui */
+h2 {
+  color: #fbfbfc;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.custom-container {
+  width: 90%;
+  margin: 30px auto 0;
+
+  .btn-custom {
+    background-color: #752fd0;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #8a5bc9;
+    }
+  }
+}
+
+.go-back {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #331755;
+
+  &:hover {
+    color: #8a5bc9;
+  }
+}
 </style>

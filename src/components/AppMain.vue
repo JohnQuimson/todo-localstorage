@@ -37,7 +37,7 @@ export default {
   <main>
     <h3 v-if="store.todos === ''">Non sono presenti todo</h3>
     <div v-else>
-      <h3>I tuoi To-Do:</h3>
+      <h2>I tuoi To-Do:</h2>
       <ul class="p-0">
         <li class="todo" v-for="(todo, index) in store.todos">
           <span>{{ todo }}</span>
@@ -57,7 +57,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-h3 {
+h2 {
   color: #fbfbfc;
   width: 90%;
   margin: 20px auto;
@@ -98,13 +98,16 @@ ul {
 }
 
 .btn-custom {
+  width: 50px;
+  height: 50px;
   position: fixed;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #752fd0;
   color: white;
-  padding: 10px 20px;
+  text-align: center;
+  line-height: 45px;
   border-radius: 50%;
   font-size: 24px;
 
