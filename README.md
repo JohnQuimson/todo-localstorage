@@ -1,12 +1,12 @@
 <h1 align="center">
   <br>
-    <img src="./public/img/my-logo.png" alt="my-logo" width="200">
+    
   <br>
- TITLE
+ Todo LocalStorage
   <br>
 </h1>
 
-<h4 align="center">summary <a href="http://electron.atom.io" target="_blank">"link"</a>.</h4>
+<h4 align="center"><a href="https://todo-localstorage-jq.netlify.app/" target="_blank">Go to Website</a>.</h4>
 
 <!-- <p align="center">
   <a href="https://badge.fury.io/js/electron-markdownify">
@@ -32,16 +32,9 @@
 
 ## Description
 
-- line 1
-- line 2
-- line 3
-- line 4
-- line 5
-- line 6
-- line 7
-- line 8
-- line 9
-- line 10
+Semplice web-app per la gestione delle cose da fare, ottimizzata per l'uso su dispositivi mobili, tablet e PC. 📱
+Utilizza LocalStorage per memorizzare i dati direttamente sul dispositivo dell'utente, garantendo una persistenza dei dati anche dopo la chiusura del browser.
+La grafica è stata progettata per essere semplice e minimale, offrendo un'esperienza pulita e intuitiva per gli utenti di tutti i dispositivi.
 
 ## How To Use
 
