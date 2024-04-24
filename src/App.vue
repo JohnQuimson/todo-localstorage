@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <!-- <AppHeader /> -->
   <!-- <AppMain /> -->
   <router-view></router-view>
   <AppFooter />

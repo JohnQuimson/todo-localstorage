@@ -37,11 +37,13 @@ export default {
   <main>
     <h3 v-if="store.todos === ''">Non sono presenti todo</h3>
     <div v-else>
-      <h3>I tuoi todo:</h3>
+      <h3>I tuoi To-Do:</h3>
       <ul class="p-0">
         <li class="todo" v-for="(todo, index) in store.todos">
-          {{ todo }}
-          <button @click="removeTodo(index)">Rimuovi</button>
+          <span>{{ todo }}</span>
+          <button class="delete-btn" @click="removeTodo(index)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </li>
       </ul>
     </div>
@@ -55,6 +57,40 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+h3 {
+  color: #fbfbfc;
+  width: 90%;
+  margin: 20px auto;
+}
+
+ul {
+  height: 70vh;
+  overflow: scroll;
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+
+    span {
+      background-color: transparent;
+    }
+  }
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: #a73c46;
+
+  &:hover {
+    color: #d43242;
+  }
+}
+
 .todo {
   background-color: #242329;
   color: white;
@@ -71,5 +107,9 @@ export default {
   padding: 10px 20px;
   border-radius: 50%;
   font-size: 24px;
+
+  &:hover {
+    background-color: #8a5bc9;
+  }
 }
 </style>
