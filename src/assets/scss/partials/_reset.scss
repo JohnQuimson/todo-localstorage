@@ -1,0 +1,19 @@
+/* Stile generico della scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track (la "striscia" su cui scorre la thumb) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Thumb (il "pulsante" mobile) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Al passaggio del mouse sulla thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

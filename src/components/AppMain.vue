@@ -34,29 +34,31 @@ export default {
 </script>
 
 <template>
-  <main>
-    <div v-if="store.todos == ''" class="no-task">
-      <h3>Non sono presenti Tasks</h3>
-      <p>premi il bottone per aggiungerne</p>
-    </div>
+  <main class="d-flex justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+      <div v-if="store.todos == ''" class="no-task">
+        <h3>Non sono presenti Tasks</h3>
+        <p>premi il bottone per aggiungerne</p>
+      </div>
 
-    <div v-else>
-      <h2>I tuoi To-Do:</h2>
-      <ul class="p-0">
-        <li class="todo" v-for="(todo, index) in store.todos">
-          <span>{{ todo }}</span>
-          <button class="delete-btn" @click="removeTodo(index)">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </li>
-      </ul>
-    </div>
+      <div v-else>
+        <h2>I tuoi To-Do:</h2>
+        <ul class="p-0">
+          <li class="todo" v-for="(todo, index) in store.todos">
+            <span>{{ todo }}</span>
+            <button class="delete-btn" @click="removeTodo(index)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
 
-    <router-link
-      class="btn-custom text-decoration-none"
-      :to="{ name: 'addtodo' }"
-      >+</router-link
-    >
+      <router-link
+        class="btn-custom text-decoration-none"
+        :to="{ name: 'addtodo' }"
+        >+</router-link
+      >
+    </div>
   </main>
 </template>
 
@@ -82,8 +84,8 @@ h2 {
 }
 
 ul {
-  height: 70vh;
-  overflow: scroll;
+  max-height: 70vh;
+  overflow-y: auto;
 
   li {
     display: flex;

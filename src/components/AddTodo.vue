@@ -30,27 +30,29 @@ export default {
 </script>
 
 <template>
-  <main>
-    <h2>Crea Task</h2>
-    <form @submit.prevent="addTodo">
-      <div class="custom-container">
-        <input
-          type="text"
-          class="form-control"
-          v-model="todoInput"
-          placeholder="scrivi la tua task"
-        />
-        <button type="submit" class="btn-custom my-3">Aggiungi</button>
-      </div>
+  <main class="d-flex justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6 position-relative">
+      <h2>Crea Task</h2>
+      <form @submit.prevent="addTodo">
+        <div class="custom-container">
+          <input
+            type="text"
+            class="form-control"
+            v-model="todoInput"
+            placeholder="scrivi la tua task"
+          />
+          <button type="submit" class="btn-custom my-3">Aggiungi</button>
+        </div>
 
-      <!-- <router-link type="sumbit" class="btn btn-primary" :to="{ name: 'home' }"
+        <!-- <router-link type="sumbit" class="btn btn-primary" :to="{ name: 'home' }"
         >add</router-link
       > -->
-    </form>
+      </form>
 
-    <router-link :to="{ name: 'home' }" class="go-back">
-      <i class="fa-solid fa-xmark"></i
-    ></router-link>
+      <router-link :to="{ name: 'home' }" class="go-back">
+        <i class="fa-solid fa-xmark"></i
+      ></router-link>
+    </div>
   </main>
 </template>
 
@@ -80,7 +82,7 @@ h2 {
 }
 
 .go-back {
-  position: fixed;
+  position: absolute;
   top: 10px;
   right: 10px;
   font-size: 24px;
